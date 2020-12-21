@@ -1,5 +1,3 @@
-Welcome to your new dbt project!
-
 # Solutions for Claire's SQL Puzzlers
 
 These are solutions to [Claire Carrol's Advanced SQL challenges](https://github.com/clrcrl/advanced-sql).  The solutions are written in BigQuery SQL.
