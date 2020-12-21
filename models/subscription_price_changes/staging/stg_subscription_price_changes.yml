@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_subscription_price_changes__subscription_price_changes
+    description: >
+      A record of when a customer upgrades/downgrades their subscription box.
+    columns:
+      - name: change_id
+        description: The unique idenfier for the upgrade/downgrade.
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        description: The id of the subscription the upgrade/downgrade applies to.
+      - name: price
+        description: The price of the subscription _after_ the upgrade/downgrade.
+      - name: changed_at
+        description: The date on which the upgrade/downgrade occured.
+  - name: stg_subscription_price_changes__rebillings
+    description: A record of the dates on which a subscription will be rebilled.
+    columns:
+      - name: rebilling_id
+        description: A unique identifier for the rebilling.
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        description: The id of the subscription being rebilled
+      - name: rebilled_at
+        description: The date of the rebilling

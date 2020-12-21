@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: subscription_price_changes
+    schema: subscription_price_changes
+    database: advanced-sql-challenges
+    tables:
+    - name: subscription_price_changes
+    - name: rebillings
+    - name: effective_subscription_changes
