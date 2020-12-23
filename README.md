@@ -7,6 +7,7 @@ For fun, these solutions have been compiled as a [dbt](https://www.getdbt.com) p
 ## Completed Puzzles:
 
 - Subscription Price Changes ([instructions](https://github.com/clrcrl/advanced-sql#subscription-price-changes)): Found in `/models/subscription_price_changes`
+- Apportioning Payments ([instructions](https://github.com/clrcrl/advanced-sql#apportioning-payments)): Found in `/models/apportioning_payments`
 
 ## Installation Instructions
 
@@ -15,5 +16,6 @@ _Requires Python 3.6 >= 3.8_
 1. `virtualenv -p <path to Python> venv`
 2. `source venv/bin/activate`
 3. `pip install -r requirements.txt`
+4. `dbt deps`
 
 You'll need to setup a profile in your `~/.dbt/profiles.yml` ([docs](https://docs.getdbt.com/reference/profiles.yml)), and when that's done you can test your installation using `dbt debug`.

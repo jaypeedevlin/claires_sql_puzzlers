@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_apportioning_payments__payments
+    description: A log of inbound payments, payouts and refunds for tasks.
+    columns:
+      - name: payment_id
+        description: The unique identifier for the payment.
+        tests:
+          - unique
+          - not_null
+      - name: task_id
+        description: The task the payment applies to.
+      - name: payment_type
+        description: The type of payment— `inbound`, `payout`, or `refund`.
+        tests:
+          - accepted_values:
+              values: ['inbound', 'payout', 'refund']
+      - name: amount
+        description: The amount of the payment.

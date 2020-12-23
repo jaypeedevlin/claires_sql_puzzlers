@@ -6,6 +6,9 @@ models:
       The effective dates of each subscription upgrade/downgrade. Changes are
       effective at the next billing date, and in the case of multiple changes
       within a billing period, only the last change applies.
+    tests:
+      - dbt_utils.equality:
+          compare_model: source('subscription_price_changes', 'effective_subscription_changes')
     columns:
       - name: subscription_id
         description: The unique identifier for the subscription the change was made to.

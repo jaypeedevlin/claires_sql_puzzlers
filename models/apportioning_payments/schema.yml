@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: inbound_payment_states
+    description: >
+      A record of inbound payments, apportioning refunds and payouts according to
+      company accounting rules. Always apportions payouts before refunds.
+    tests:
+      - dbt_utils.equality:
+          compare_model: source('apportioning_payments', 'inbound_payment_states')
+          compare_columns:
+            - task_id
+            - inbound_payment_id
+            - inbound_amount
+            - payout_amount
+            - refund_amount
+    columns:
+      - name: task_id
+        description: The unique identifier for the task the payment belongs to
+      - name: inbound_payment_id
+        description: The unique identifier for the inbound payment.
+        tests:
+          - unique
+          - not_null
+      - name: inbound_amount
+        description: The original amount submitted into escrow.
+      - name: payout_amount
+        description: Any payout amount attributed to the inbound payment.
+      - name: refund_amount
+        description: Any refund amount attributed to the inbound payment.
+      - name: in_escrow
+        descrpition: Any balance remaining in escrow.

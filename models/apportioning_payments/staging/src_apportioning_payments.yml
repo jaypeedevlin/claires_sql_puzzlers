@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: apportioning_payments
+    schema: apportioning_payments
+    database: advanced-sql-challenges
+    tables:
+    - name: payments
+    - name: inbound_payment_states
